@@ -12,6 +12,14 @@ export default class Song {
 
   get Template() {
     return `
+    <div class="bg-white rounded shadow" onclick="app.songsController.setActiveSong('${this.id}')">
+            <div>
+              <img src="${this.albumArt}" height="100px" width="100px"
+                class="position-relative song-img">
+            </div>
+            <h3>${this.title}</h3>
+            <h5>${this.artist}</h5>
+          </div>
 
         `;
   }
@@ -20,5 +28,19 @@ export default class Song {
     return `
 
         `;
+  }
+
+  get activeSongTemplate() {
+    return `
+    <div class="bg-white rounded shadow">
+            <div>
+              <img src="${this.albumArt}" height="100px" width="100px"
+                class="position-relative song-img">
+            </div>
+            <h3>${this.title}</h3>
+            <h5>${this.artist}</h5>
+          </div>
+
+        `
   }
 }
